@@ -1,0 +1,19 @@
+version: '3'
+services:
+  chatgpt-next-web:
+    image: yidadaa/chatgpt-next-web
+    container_name: chatgpt-next-web
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - OPENAI_API_KEY=sk-xxxxx
+      - CODE=xxxx1,xxx2
+      - HIDE_USER_API_KEY=1
+        #- BASE_URL=$BASE_URL
+        #- OPENAI_ORG_ID=$OPENAI_ORG_ID
+        #- DISABLE_GPT4=DISABLE_GPT4
+networks:
+  default:
+    external:
+      name: caddy_default
